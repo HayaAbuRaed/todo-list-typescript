@@ -5,6 +5,7 @@ export default {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
@@ -14,6 +15,5 @@ export default {
       "warn",
       { allowConstantExport: true },
     ],
-    "react/react-in-jsx-scope": "off",
   },
 };
