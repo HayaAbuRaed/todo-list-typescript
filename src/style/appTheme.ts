@@ -9,6 +9,14 @@ const themeOptions: ThemeOptions = {
     secondary: {
       main: "#ef9a9a",
     },
+    text: {
+      primary: "#1b1b1b",
+      secondary: "#f1f1f1",
+    },
+    background: {
+      default: "#1b1b1b",
+      paper: "#f1f1f1",
+    },
   },
   spacing: 8,
   typography: {
