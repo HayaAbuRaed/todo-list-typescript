@@ -4,7 +4,10 @@ import toDosReducer from "./toDosReducer";
 import { ToDo, ToDosReducerActionType } from "./types";
 
 const ToDosContextProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [toDos, dispatch] = useReducer(toDosReducer, initialState);
+  const [toDos, dispatch] = useReducer(toDosReducer, initialState, () => {
+    const localData = localStorage.getItem("toDos");
+    return localData ? JSON.parse(localData) : initialState;
+  });
 
   useEffect(() => {
     localStorage.setItem("toDos", JSON.stringify(toDos));
@@ -26,7 +29,7 @@ const ToDosContextProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <ToDosContext.Provider
       value={{
-        toDos,
+        state: toDos,
         onAddToDo,
         onToggleToDo,
         onUpdateToDo,

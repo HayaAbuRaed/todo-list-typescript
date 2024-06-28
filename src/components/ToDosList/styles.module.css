@@ -10,3 +10,12 @@
 .css-1howo0y-MuiListItem-root {
   padding: 0;
 }
+
+.list {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+}

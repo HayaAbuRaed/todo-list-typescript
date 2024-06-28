@@ -9,7 +9,7 @@ export interface ToDosState {
 }
 
 export interface ToDosContextValue {
-  toDos: ToDosState;
+  state: ToDosState;
   onAddToDo: (toDo: ToDo) => void;
   onToggleToDo: (id: number) => void;
   onUpdateToDo: (toDo: ToDo) => void;

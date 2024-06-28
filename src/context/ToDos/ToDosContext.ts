@@ -1,14 +1,12 @@
 import { createContext } from "react";
 import { ToDosContextValue, ToDosState } from "./types";
 
-const savedToDos = localStorage.getItem("toDos");
-
 export const initialState: ToDosState = {
-  toDos: savedToDos ? JSON.parse(savedToDos) : [],
+  toDos: [],
 };
 
 const ToDosContext = createContext<ToDosContextValue>({
-  toDos: initialState,
+  state: initialState,
   onAddToDo: () => {},
   onToggleToDo: () => {},
   onUpdateToDo: () => {},
