@@ -1,6 +1,5 @@
-import CircleIcon from "@mui/icons-material/CircleOutlined";
-import CheckCircleIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
-import { Checkbox, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
+import ToDoCheckBox from "../shared/ToDoCheckBox/ToDoCheckBox";
 import { StyledTextField } from "./styled";
 
 const AddTaskField = () => {
@@ -11,16 +10,7 @@ const AddTaskField = () => {
       borderRadius={1.5}
       sx={{ backgroundColor: (theme) => theme.palette.background.paper }}
     >
-      <Checkbox
-        icon={<CircleIcon />}
-        checkedIcon={<CheckCircleIcon />}
-        color="secondary"
-        disableRipple
-        sx={{
-          color: "#8c8c8c",
-          ":hover": { color: "pink" },
-        }}
-      />
+      <ToDoCheckBox />
       <StyledTextField placeholder="Enter your todo here..." fullWidth />
     </Stack>
   );
