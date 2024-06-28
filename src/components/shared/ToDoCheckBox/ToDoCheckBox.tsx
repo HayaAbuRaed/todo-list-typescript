@@ -1,9 +1,9 @@
 import CheckCircleIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import CircleIcon from "@mui/icons-material/CircleOutlined";
-import { Checkbox } from "@mui/material";
+import { Checkbox, CheckboxProps } from "@mui/material";
 import { FC } from "react";
 
-const ToDoCheckBox: FC = () => {
+const ToDoCheckBox: FC<CheckboxProps> = (props) => {
   return (
     <Checkbox
       icon={<CircleIcon />}
@@ -14,6 +14,7 @@ const ToDoCheckBox: FC = () => {
         color: "#8c8c8c",
         ":hover": { color: "pink" },
       }}
+      {...props}
     />
   );
 };

@@ -9,8 +9,10 @@ const toDosReducer = (
   action: ToDosReducerAction
 ): ToDosState => {
   switch (action.type) {
-    case ToDosReducerActionType.ADD_TODO:
-      return { toDos: [...state.toDos, action.payload] };
+    case ToDosReducerActionType.ADD_TODO: {
+      const id = state.toDos.length + 1;
+      return { toDos: [...state.toDos, { id, ...action.payload }] };
+    }
     case ToDosReducerActionType.TOGGLE_TODO:
       return {
         toDos: state.toDos.map((toDo) =>

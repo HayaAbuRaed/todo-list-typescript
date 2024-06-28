@@ -5,7 +5,7 @@ import empty from "../../animation/empty.json";
 
 const EmptyList: FC = () => {
   return (
-    <Stack alignItems="center" justifyContent="center">
+    <Stack alignItems="center" justifyContent="center" paddingTop={6}>
       <Lottie animationData={empty} style={{ width: "150px" }} />
       <Typography fontStyle="italic" fontWeight={500} color="GrayText">
         No todos added yet

@@ -4,13 +4,15 @@ export interface ToDo {
   completed: boolean;
 }
 
+export interface NewToDo extends Omit<ToDo, "id"> {}
+
 export interface ToDosState {
   toDos: ToDo[];
 }
 
 export interface ToDosContextValue {
   state: ToDosState;
-  onAddToDo: (toDo: ToDo) => void;
+  onAddToDo: (toDo: NewToDo) => void;
   onToggleToDo: (id: number) => void;
   onUpdateToDo: (toDo: ToDo) => void;
   onDeleteToDo: (id: number) => void;
@@ -25,6 +27,6 @@ export enum ToDosReducerActionType {
 
 export type ToDosReducerAction =
   | { type: ToDosReducerActionType.UPDATE_TODO; payload: ToDo }
-  | { type: ToDosReducerActionType.ADD_TODO; payload: ToDo }
+  | { type: ToDosReducerActionType.ADD_TODO; payload: NewToDo }
   | { type: ToDosReducerActionType.TOGGLE_TODO; payload: number }
   | { type: ToDosReducerActionType.DELETE_TODO; payload: number };

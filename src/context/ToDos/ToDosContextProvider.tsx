@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useEffect, useReducer } from "react";
 import ToDosContext, { initialState } from "./ToDosContext";
 import toDosReducer from "./toDosReducer";
-import { ToDo, ToDosReducerActionType } from "./types";
+import { NewToDo, ToDo, ToDosReducerActionType } from "./types";
 
 const ToDosContextProvider: FC<PropsWithChildren> = ({ children }) => {
   const [toDos, dispatch] = useReducer(toDosReducer, initialState, () => {
@@ -13,7 +13,7 @@ const ToDosContextProvider: FC<PropsWithChildren> = ({ children }) => {
     localStorage.setItem("toDos", JSON.stringify(toDos));
   }, [toDos]);
 
-  const onAddToDo = (toDo: ToDo) => {
+  const onAddToDo = (toDo: NewToDo) => {
     dispatch({ type: ToDosReducerActionType.ADD_TODO, payload: toDo });
   };
   const onToggleToDo = (id: number) => {
