@@ -33,6 +33,7 @@ const AddTaskField: FC = () => {
           width="100%"
           direction="row"
           borderRadius={1.5}
+          paddingBlock={1}
           sx={{ backgroundColor: (theme) => theme.palette.background.paper }}
           alignItems={"center"}
         >
