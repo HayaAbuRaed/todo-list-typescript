@@ -1,0 +1,14 @@
+.listItem {
+  border-bottom: 2px solid #ccc;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.list {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  min-height: 50vh;
+}
