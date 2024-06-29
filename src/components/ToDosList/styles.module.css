@@ -1,14 +1,9 @@
 .listItem {
   border-bottom: 2px solid #ccc;
-  /* padding: 1em 0; */
 }
 
 .listItem:last-child {
   border-bottom: none;
-}
-
-.css-1howo0y-MuiListItem-root {
-  padding: 0;
 }
 
 .list {
@@ -16,7 +11,4 @@
   max-width: 550px;
   border-radius: 12px;
   min-height: 50vh;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
 }

@@ -19,6 +19,7 @@ export const StyledTextField = styled(TextField)(({ theme }) => ({
     },
   },
   "& .MuiInputBase-input": {
-    paddingInline: 0,
+    paddingInline: 2,
+    paddingBlock: 10,
   },
 }));

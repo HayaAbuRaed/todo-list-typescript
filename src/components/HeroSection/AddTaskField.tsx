@@ -1,9 +1,9 @@
 import { Stack } from "@mui/material";
-import { Field, Form, Formik, FormikHelpers } from "formik";
+import { Form, Formik, FormikHelpers } from "formik";
 import { FC } from "react";
 import { useToDosContext } from "../../context";
+import TextField from "../shared/TextField";
 import ToDoCheckBox from "../shared/ToDoCheckBox/ToDoCheckBox";
-import { StyledTextField } from "./styled";
 
 interface FormValues {
   title: string;
@@ -34,15 +34,14 @@ const AddTaskField: FC = () => {
           direction="row"
           borderRadius={1.5}
           sx={{ backgroundColor: (theme) => theme.palette.background.paper }}
+          alignItems={"center"}
         >
           <ToDoCheckBox disabled />
 
-          <Field
+          <TextField
             name="title"
-            as={StyledTextField}
             placeholder="Enter your todo here..."
             autoFocus
-            fullWidth
           />
         </Stack>
       </Form>

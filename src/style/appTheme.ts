@@ -1,6 +1,8 @@
 import { ThemeOptions, createTheme } from "@mui/material/styles";
+import { mixins } from "./mixins";
 
 const themeOptions: ThemeOptions = {
+  mixins: mixins,
   palette: {
     mode: "light",
     primary: {
