@@ -10,11 +10,15 @@ import { useToDosContext } from "../../context";
 const ToDoItem: FC<ToDoItemProps> = ({ todo }) => {
   const { title } = todo;
 
-  const { onDeleteToDo } = useToDosContext();
+  const { onDeleteToDo, onToggleToDo } = useToDosContext();
 
   return (
     <ListItem className={styles.listItem} sx={{ padding: "0.5em 0" }}>
-      <ToDoCheckBox />
+      <ToDoCheckBox
+        onClick={() => onToggleToDo(todo.id)}
+        checked={todo.completed}
+      />
+
       <Typography>{title}</Typography>
 
       <Stack direction="row" marginLeft="auto" gap={0.75} paddingInline={1.2}>
