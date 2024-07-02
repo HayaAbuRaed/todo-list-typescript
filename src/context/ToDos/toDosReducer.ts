@@ -33,6 +33,8 @@ const toDosReducer = (
       return {
         toDos: state.toDos.filter((toDo) => toDo.id !== action.payload),
       };
+    case ToDosReducerActionType.REORDER_TODOS:
+      return { toDos: action.payload };
     default:
       return state;
   }

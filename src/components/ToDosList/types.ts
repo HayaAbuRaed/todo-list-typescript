@@ -6,4 +6,5 @@ export interface ToDo {
 
 export interface ToDoItemProps {
   todo: ToDo;
+  index: number;
 }
