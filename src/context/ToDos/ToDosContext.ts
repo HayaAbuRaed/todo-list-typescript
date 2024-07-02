@@ -11,6 +11,7 @@ const ToDosContext = createContext<ToDosContextValue>({
   onToggleToDo: () => {},
   onUpdateToDo: () => {},
   onDeleteToDo: () => {},
+  onReorderToDos: () => {},
 });
 
 export default ToDosContext;

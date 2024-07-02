@@ -16,6 +16,7 @@ export interface ToDosContextValue {
   onToggleToDo: (id: number) => void;
   onUpdateToDo: (toDo: ToDo) => void;
   onDeleteToDo: (id: number) => void;
+  onReorderToDos: (toDos: ToDo[]) => void;
 }
 
 export enum ToDosReducerActionType {
@@ -23,10 +24,12 @@ export enum ToDosReducerActionType {
   TOGGLE_TODO = "TOGGLE_TODO",
   UPDATE_TODO = "UPDATE_TODO",
   DELETE_TODO = "DELETE_TODO",
+  REORDER_TODOS = "REORDER_TODOS",
 }
 
 export type ToDosReducerAction =
   | { type: ToDosReducerActionType.UPDATE_TODO; payload: ToDo }
   | { type: ToDosReducerActionType.ADD_TODO; payload: NewToDo }
   | { type: ToDosReducerActionType.TOGGLE_TODO; payload: number }
-  | { type: ToDosReducerActionType.DELETE_TODO; payload: number };
+  | { type: ToDosReducerActionType.DELETE_TODO; payload: number }
+  | { type: ToDosReducerActionType.REORDER_TODOS; payload: ToDo[] };

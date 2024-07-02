@@ -25,6 +25,9 @@ const ToDosContextProvider: FC<PropsWithChildren> = ({ children }) => {
   const onDeleteToDo = (id: number) => {
     dispatch({ type: ToDosReducerActionType.DELETE_TODO, payload: id });
   };
+  const onReorderToDos = (toDos: ToDo[]) => {
+    dispatch({ type: ToDosReducerActionType.REORDER_TODOS, payload: toDos });
+  };
 
   return (
     <ToDosContext.Provider
@@ -34,6 +37,7 @@ const ToDosContextProvider: FC<PropsWithChildren> = ({ children }) => {
         onToggleToDo,
         onUpdateToDo,
         onDeleteToDo,
+        onReorderToDos,
       }}
     >
       {children}
